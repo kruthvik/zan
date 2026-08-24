@@ -1,6 +1,6 @@
 # Zan
 
-Zan syncs PDF attachments from a Zotero collection into a matching Google Drive folder so those files can be selected as sources in NotebookLM.
+Zan syncs PDF attachments from a Zotero collection into a matching Google Drive folder so those files can be selected as sources in other tools.
 
 ## What it does
 
@@ -14,7 +14,7 @@ discover local PDFs
 Google Drive / Zan / <collection>
         |
         v
-NotebookLM
+Tool
 ```
 
 Zan:
@@ -31,7 +31,7 @@ Zan:
 - can optionally trash Drive files removed from the Zotero collection
 - uses the narrower Google Drive `drive.file` OAuth scope
 
-It does **not** automatically add brand-new Drive files to a consumer NotebookLM notebook. After syncing, select the Drive files as NotebookLM sources. Once a Drive source is in NotebookLM, Drive-backed source updates can be resynced by NotebookLM.
+It does **not** automatically add brand-new Drive files to a consumer tool. After syncing, select the Drive files as sources in other programs/
 
 ---
 
@@ -270,18 +270,6 @@ Drive files also receive private `appProperties` containing their Zotero keys. T
 
 ---
 
-## NotebookLM
-
-After the Drive sync:
-
-1. Open/create the corresponding NotebookLM notebook.
-2. Add sources from Google Drive.
-3. Select the PDFs in `Zan/<collection>`.
-
-The Drive file IDs stay stable across Zan updates, so the bridge updates the existing Drive objects rather than spraying duplicate PDFs into your account.
-
----
-
 ## Current scope
 
 Version 0.1 intentionally focuses on the useful core:
@@ -297,4 +285,3 @@ Good next additions would be:
 - multiple collections in one command
 - filesystem/watch mode
 - a small desktop UI
-- direct NotebookLM source creation if/when an appropriate API is available for the account being used
